@@ -21,8 +21,4 @@ let package = Package(
         .target(
             name: "RichError",
             dependencies: []),
-        .testTarget(
-            name: "RichErrorTests",
-            dependencies: ["RichError"]),
-    ]
-)
+    ])

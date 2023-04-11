@@ -1,6 +1,16 @@
-public struct RichError {
-    public private(set) var text = "Hello, World!"
+//
+//  RichError.swift
+//  RichError
+//
+//  Created by Bradley Windybank on 10/04/23.
+//
 
-    public init() {
-    }
+import Foundation
+
+/// A simple error protocol for structuring errors. Data can be passed along for use with debugging.
+protocol RichError: Error {
+    associatedtype ErrorKind
+
+    var data: [String: Any?] { get }
+    var kind: ErrorKind { get }
 }
