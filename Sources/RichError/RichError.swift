@@ -8,9 +8,9 @@
 import Foundation
 
 /// A simple error protocol for structuring errors. Data can be passed along for use with debugging.
-protocol RichError: Error {
-    associatedtype ErrorKind
+public protocol RichError: Error {
+    associatedtype ErrorKind: RawRepresentable where ErrorKind.RawValue: StringProtocol
 
-    var data: [String: Any?] { get }
+    var data: [String: String] { get }
     var kind: ErrorKind { get }
 }

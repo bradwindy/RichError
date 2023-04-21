@@ -12,13 +12,13 @@ A simple error protocol for structuring errors. Data can be passed along for use
 struct NetworkRequestManagerError: RichError {
     typealias ErrorKind = NetworkRequestManagerErrorKind
 
-    enum NetworkRequestManagerErrorKind {
+    enum NetworkRequestManagerErrorKind: String {
         case non200StatusCode
         case nonJsonResponse
     }
 
     var kind: NetworkRequestManagerErrorKind
-    var data: [String: Any?]
+    var data: [String: String]
 }
 ```
 
